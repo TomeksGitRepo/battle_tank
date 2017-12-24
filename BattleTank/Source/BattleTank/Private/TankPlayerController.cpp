@@ -2,6 +2,7 @@
 
 #include "TankPlayerController.h"
 
+
 void ATankPlayerController::BeginPlay()
 {
 	Super::BeginPlay();
@@ -17,9 +18,25 @@ void ATankPlayerController::BeginPlay()
 	}
 }
 
+
+void ATankPlayerController::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+	AimTowardsCorsshair();
+}
+
 ATank* ATankPlayerController::GetControlledTank() const
 {
 	return Cast<ATank>(GetPawn());
+}
+
+void ATankPlayerController::AimTowardsCorsshair()
+{
+	if (!GetControlledTank()) { return; }
+
+	//Get world location if linetrace through crosshair
+	//If it hits the landscpe 
+		//Tell conntroller to start moving parts to hit target
 }
 
 
