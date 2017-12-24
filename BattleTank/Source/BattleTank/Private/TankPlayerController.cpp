@@ -38,9 +38,8 @@ void ATankPlayerController::AimTowardsCorsshair()
 	FVector HitLocation; // Out paramter
 	if (GetSightRayHitLocation(HitLocation)) // Has "side-effect", is going to line trace
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Hit location: %s"), *(HitLocation.ToString()));
 	
-		// TODO Tell conntroller to start moving parts to hit target
+		GetControlledTank()->AimAt(HitLocation);
 	}
 }
 
