@@ -6,6 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "TankBarrel.h"
 #include "Projectile.h"
+#include "TankMovementComponent.h"
 
 // Sets default values
 ATank::ATank()
@@ -14,7 +15,8 @@ ATank::ATank()
 	PrimaryActorTick.bCanEverTick = false;
 
 	//No need to protect points as added at construction
-	TankAimingComponent = CreateDefaultSubobject<UTankAimingComponent>(FName("Aiming Component"));
+	TankAimingComponent = CreateDefaultSubobject<UTankAimingComponent>(FName("Aiming Component")); 
+	TankMovementComponent = CreateDefaultSubobject<UTankMovementComponent>(FName("Movement Component"));
 
 }
 
