@@ -4,6 +4,8 @@
 #include "Engine/World.h"
 #include "GameFramework/Actor.h"
 #include "Tank.h"
+#include "Runtime/AIModule/Classes/AIController.h"
+
 
 
 void ATankAiController::BeginPlay()
@@ -21,8 +23,8 @@ void ATankAiController::Tick(float DeltaSeconds)
 
 	if (PlayerTank)
 	{
-		//TODO move towards the player
-
+		//Move towards the player
+		MoveToActor(PlayerTank, AcceptanceRadius); //TODO check radius is in cm
 		//Aim towards the player
 		ControlledTank->AimAt(PlayerTank->GetActorLocation());
 
@@ -30,6 +32,8 @@ void ATankAiController::Tick(float DeltaSeconds)
 		ControlledTank->Fire(); //TODO limit firing rate
 	}
 }
+
+
 
 
 
