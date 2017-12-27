@@ -22,6 +22,9 @@ void ATank::BeginPlay()
 {
 	Super::BeginPlay(); //Need for BP begin play to run
 
+	auto TankName = GetName();
+	UE_LOG(LogTemp, Warning, TEXT("%s DONKEY: Tank C++ BeginPlay"), *TankName)
+
 }
 
 void  ATank::AimAt(FVector HitLocation)
