@@ -6,7 +6,7 @@
 #include "Tank.h"
 #include "Runtime/AIModule/Classes/AIController.h"
 
-
+//* Depends on movement component via pathfinding system
 
 void ATankAiController::BeginPlay()
 {
