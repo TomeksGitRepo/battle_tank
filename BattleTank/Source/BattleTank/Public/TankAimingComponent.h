@@ -39,7 +39,7 @@ public:
 	EFiringState GetFiringState() const;
 	
 	UFUNCTION(BlueprintCallable, Category = Firing)
-	int GetRoundsLeft() const;
+	int32 GetRoundsLeft() const;
 
 protected:
 	UPROPERTY(BlueprintReadOnly, Category = "State")
@@ -66,6 +66,9 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category = Firing)
 	float LaunchSpeed = 4000.0;
 
+	UPROPERTY(EditDefaultsOnly, Category = Firing)
+	int32 RoundsLeft = 3;
+
 	double LastFireTime = 0;
 
 	virtual void TickComponent(float DeltaTime, enum ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
@@ -74,6 +77,5 @@ private:
 
 	FVector AimDirection;
 
-	UPROPERTY()
-	int RoundsLeft = 3;
+
 };
