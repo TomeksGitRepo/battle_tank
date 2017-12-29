@@ -1,3 +1,8 @@
-BattleTank/Content/StarterContent/
+BattleTank/Content/BattleGround_sharedassets/T_Ground_Grass_D.uasset
+BattleTank/Content/BattleGround_sharedassets/T_Ground_Grass_N.uasset
+BattleTank/Content/BattleGround_sharedassets/T_Ground_Gravel_D.uasset
+BattleTank/Content/BattleGround_sharedassets/T_Ground_Gravel_N.uasset
+BattleTank/Content/BattleGround_sharedassets/T_MacroVariation.uasset
+BattleTank/Content/BattleGround_sharedassets/T_Perlin_Noise_M.uasset
 BattleTank/Content/UI/tankFire.uasset
 BattleTank/Content/UI/tankFireGood.uasset

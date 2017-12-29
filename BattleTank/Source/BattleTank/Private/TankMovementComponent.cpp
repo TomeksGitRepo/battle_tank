@@ -22,9 +22,8 @@ void UTankMovementComponent::IntendMoveForward(float Throw)
 void UTankMovementComponent::IntendTurnRight(float Throw)
 {
 	if (!ensure(LeftTrack || RightTrack)) { return; }
-	//UE_LOG(LogTemp, Warning, TEXT("Intend turn right : %f"), Throw);
-	LeftTrack->SetThrottle(Throw);
-	RightTrack->SetThrottle(-Throw);
+	LeftTrack->SetThrottle( Throw  );
+	RightTrack->SetThrottle( -Throw );
 }
 
 void UTankMovementComponent::RequestDirectMove(const FVector& MoveVelocity, bool bForceMaxSpeed)
