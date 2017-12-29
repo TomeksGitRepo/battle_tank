@@ -27,7 +27,7 @@ AProjectile::AProjectile()
 
 	ImpactBlast = CreateDefaultSubobject<UParticleSystemComponent>(FName("Impact Blast"));
 	ImpactBlast->AttachToComponent(RootComponent, FAttachmentTransformRules::KeepRelativeTransform); // TODO update to new API
-	ProjectileMovement->bAutoActivate = false;
+	ImpactBlast->bAutoActivate = false;
 
 }
 
@@ -35,9 +35,15 @@ AProjectile::AProjectile()
 void AProjectile::BeginPlay()
 {
 	Super::BeginPlay();
-	
+	CollisionMesh->OnComponentHit.AddDynamic(this, &AProjectile::OnHit);
 }
 
+
+void AProjectile::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
+{
+	LaunchBlast->Deactivate();
+	ImpactBlast->Activate();
+}
 
 
 void AProjectile::LaunchProjectile(float Speed)
